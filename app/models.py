@@ -12,3 +12,19 @@ class Article:
         self.content = content
         
         
+class Source:
+    '''
+    Class for defining source objects
+    '''
+    
+    all_sources = []
+    
+    def __init__(self,id,name,description,url,category):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.url = url
+        self.category = category
+        
+    def save_source(self):
+        Source.all_sources.append(self)
