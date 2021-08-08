@@ -6,11 +6,13 @@ today = datetime.today().strftime('%Y-%m-%d')
 
 api_key = None
 base_url = None
+article_url = None
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['BASE_URL']
+    article_url = app.config['ARTICLE_URL']
     
 def get_source(source):
     '''
@@ -24,7 +26,7 @@ def get_source(source):
         
         source_results = None
         
-        if get_source_response['source']:
+        if get_source_response["source"]:
             source_list = get_source_response['source']
             source_results = process_source_results(source_list)
             
@@ -54,7 +56,7 @@ def get_article(id):
     '''
     Function that gets the json response to our url request
     '''
-    get_article_url = base_url.format(id,api_key)
+    get_article_url = article_url.format(id,api_key)
     
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()
@@ -63,12 +65,12 @@ def get_article(id):
         article_results = None
         
     if get_article_response['article']:
-        article_results_list = get_article_response['article']
-        article_results = process_results(article_results_list)
+        article_list = get_article_response['article']
+        article_results = process_article_results(article_list)
         
     return article_results
 
-def process_results(article_list):
+def process_article_results(article_list):
     '''
     Function for processing article result
     '''
