@@ -26,7 +26,7 @@ def get_source(source):
         
         source_results = None
         
-        if get_source_response["source"]:
+        if get_source_response['source']:
             source_list = get_source_response['source']
             source_results = process_source_results(source_list)
             
