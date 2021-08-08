@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
+{% block styles%}
+    {{ super() }}
+{% endblock %}
+
+
+{%block content%}
+<h1 class="text-center">News Sites</h1>
+  {{macro.displaySourceList(source)}}
+{%endblock%}
