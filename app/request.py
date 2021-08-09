@@ -1,12 +1,13 @@
 import urllib.request,json
 from .models import Article,Source
 from datetime import datetime
+from newsapi import NewsApiClient
 
 today = datetime.today().strftime('%Y-%m-%d')
 
-api_key = None
-base_url = None
-article_url = None
+api_key = 'NEWS_API_KEY'
+base_url = 'BASE_URL'
+article_url = 'ARTICLE_URL'
 
 def configure_request(app):
     global api_key,base_url,article_url
@@ -14,11 +15,11 @@ def configure_request(app):
     base_url = app.config['BASE_URL']
     article_url = app.config['ARTICLE_URL']
     
-def get_source(source):
+def get_source(sources):
     '''
     Get Json response to our request
     '''
-    get_source_url = base_url.format(source,api_key)
+    get_source_url = base_url.format(sources,api_key)
     
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
@@ -26,8 +27,8 @@ def get_source(source):
         
         source_results = None
         
-        if get_source_response['source']:
-            source_list = get_source_response['source']
+        if get_source_response['sources']:
+            source_list = get_source_response['sources']
             source_results = process_source_results(source_list)
             
         return source_results    
@@ -64,8 +65,8 @@ def get_article(id):
         
         article_results = None
         
-    if get_article_response['article']:
-        article_list = get_article_response['article']
+    if get_article_response['articles']:
+        article_list = get_article_response['articles']
         article_results = process_article_results(article_list)
         
     return article_results

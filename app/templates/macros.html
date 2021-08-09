@@ -9,7 +9,7 @@
           <p class="card-text">{{source.description}}</p>
         </div>
         <div class="panel-footer">
-          <a href="{{source.url}}" class="btn btn-sm btn-danger">Source link.</a>
+          <a href="{{source.url}}" class="btn btn-sm btn-danger">Visit this website</a>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
     <h2>{{article.title | truncate(50)}}</h2>
     <p>{{article.description| truncate(99)}}</p>
     <p>Published at: {{article.publishedAt}}</p>
-    <a href="{{article.url}}">Full article</a>
+    <a href="{{article.url}}">Read the full article</a>
   </div>
   {%endfor%}
 {%endmacro%}
