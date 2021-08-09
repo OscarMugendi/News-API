@@ -2,10 +2,4 @@
 
 {% block navbar %}
   {% include 'navbar.html' %}
-  <ul>
-    <h2>Articles</h2>
-    {% for article in articles %}
-        <li>{{articles.title}}</li>
-    {% endfor %}
-  </ul>
 {% endblock %}
