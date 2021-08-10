@@ -1,4 +1,4 @@
-# News-API
+# Moringa News-API
 
 A python web application designed to consume the News API database and present it on a user-friendly interface. The application was built on Python3.6
 
