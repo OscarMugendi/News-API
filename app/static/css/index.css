@@ -1,0 +1,41 @@
+h2{
+    font-size: 30px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+.panel{
+    height: 250px;
+    width:400px;
+  
+    color: white;
+  
+    border: 5px;
+    padding: 8px;
+    background-color: black;
+}
+
+p{
+    font-size: 15px;
+}
+
+#header{
+    color:white;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+.mydiv {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height:150px;
+    width: 500px;
+    margin: auto;
+}
+
+body{
+    background-image: url("index.jpeg");
+    background-size: cover;
+}
