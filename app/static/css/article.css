@@ -1,8 +1,8 @@
 body{
     background-image: url("css.jpeg");
     background-size: contain;
-    color: white;
-  }
+    color: black;
+}
   
 .mydiv {
     margin-top: 0px;
@@ -10,4 +10,5 @@ body{
     height:150px;
     width: 500px;
     margin: auto;
+    color: black;
 }
